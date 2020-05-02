@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- google material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="newtodofavicon.svg" sizes="any">
+    <title>New ToDo</title>
+</head>
+<body>
+<h1 class="text-center bg-info" >Create New ToDo Task</h1>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<i class="material-icons">arrow_back</i>
+    <a class="navbar-brand" href="../HA01/Overview.html">Back to the main site</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+
+<div class=" container-fluid">
+	<form>
+  		<div class="form-group row">
+    		<label for="title" class="col-sm-2 col-form-label">Task title</label>
+    		<div class="col-sm-10">
+      			<input type="text" class="form-control" id="title" placeholder="Watch Netflix">
+    		</div>
+ 		</div>
+		<div class="form-group row">
+    		<label for="dueDate" class="col-sm-2 col-form-label">Due date</label>
+    		<div class="col-sm-10">
+      			<input type="date" class="form-control" id="dueDate">
+    		</div>
+  		</div>
+  		<div class="form-group row">
+    		<label for="progress" class="col-sm-2 col-form-label">Progress</label>
+    		<div class="col-sm-10">
+      			<form name="progressForm">
+    				<input type="range" name="progressScrollerInput" id="progressInputId" value="20" min="1" max="100" oninput="processOutputId.value = progressInputId.value">
+    				<output name="processScrollerOutput" id="processOutputId">20</output>
+				</form>
+    		</div>
+  		</div>
+	</form>
+	<button type="button" class="btn btn-dark">Save</button>
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
