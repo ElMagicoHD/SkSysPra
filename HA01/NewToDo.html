@@ -15,43 +15,56 @@
     <title>New ToDo</title>
 </head>
 <body>
-<h1 class="text-center bg-info" >Create New ToDo Task</h1>
+	<h1 class="text-center bg-info" >Create New ToDo Task</h1>
 
 
-<nav class="navbar navbar-expand navbar-light bg-light">
-	<i class="material-icons">arrow_back</i>
-    <a class="navbar-brand" href="../HA01/Overview.html">Back to the main site</a>
-</nav>
+	<nav class="navbar navbar-expand navbar-light bg-light">
+		<i class="material-icons">arrow_back</i>
+		<a class="navbar-brand" href="../HA01/Overview.html">Back to the main site</a>
+	</nav>
 
-<div class="container-fluid">
-	<form>
-  		<div class="form-group row">
-    		<label for="title" class="col-sm-2 col-form-label">Task title</label>
-    		<div class="col-sm-10">
-				<textarea style="resize: none;" class="rounded form-control"  placeholder="Watching Netflix"></textarea>
+	<div class="container-fluid">
+		<form>
+			<div class="form-group row">
+				<label for="title" class="col-sm-2 col-form-label">Task title</label>
+				<div class="col-sm-10">
+					<textarea style="resize: none;" class="rounded form-control"  placeholder="Watching Netflix"></textarea>
+				</div>
+				<!-- <input type="text" class="form-control" id="title" placeholder="Watch Netflix"> -->
 			</div>
-			<!-- <input type="text" class="form-control" id="title" placeholder="Watch Netflix"> -->
- 		</div>
-		<div class="form-group row">
-    		<label for="dueDate" class="col-sm-2 col-form-label">Due date</label>
-    		<div class="col-sm-10">
-      			<input type="date" class="form-control" id="dueDate">
-    		</div>
-  		</div>
-  		<div class="form-group row">
-    		<label for="progress" class="col-sm-2 col-form-label">Progress</label>
-    		<div class="col-sm-6">
-      			<form name="progressForm">
-    				<input class="slider" type="range" name="progressScrollerInput" id="progressInputId" value="20" min="1" max="100" oninput="processOutputId.value = progressInputId.value" >
-					<div class=" font-italic text-center">
-						<output name="processScrollerOutput" id="processOutputId">20</output>%
-					</div>
-				</form>
-    		</div>
-  		</div>
-	</form>
-	<button type="button" class="btn btn-dark">Save</button>
-</div>
+			<div class="form-group row">
+				<label for="dueDate" class="col-sm-2 col-form-label">Due date</label>
+				<div class="col-sm-10">
+					<input type="date" class="form-control" id="dueDate">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="progress" class="col-sm-2 col-form-label">Progress</label>
+				<div class="col-sm-6">
+					<form name="progressForm">
+						<input class="slider" type="range" name="progressScrollerInput" id="progressInputId" value="20" min="1" max="100" oninput="processOutputId.value = progressInputId.value" >
+						<div class=" font-italic text-center">
+							<output name="processScrollerOutput" id="processOutputId">20</output>%
+						</div>
+					</form>
+				</div>
+			</div>
+		</form>
+		<button type="button" class="btn btn-dark">Save</button>
+	</div>
+
+	<footer class="footer fixed-bottom bg-light text-info">
+		<div class="d-flex justify-content-around py-3">
+			<div class="mr-auto p-2">
+				2020 
+				<a style="color: inherit;" href="https://github.com/dancingsushii"> Tanja Yakovenko</a>
+				<a style="color: inherit;" href="https://github.com/ElMagicoHD">Alexander Linger</a>
+			</div>
+			<div class="p-2">
+				<a style="color: inherit;" href="../HA01/impressum.html">Impressum</a>
+			</div>
+		</div>
+	</footer>
 
 
 <!-- Optional JavaScript -->
