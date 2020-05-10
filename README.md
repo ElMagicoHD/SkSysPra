@@ -1,2 +1,1 @@
-SkSysPra
-trying to make some changes
+Praktikum Skalierbare Systeme
