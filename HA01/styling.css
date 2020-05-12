@@ -31,3 +31,8 @@
 .nix{
     resize: none;
 }
+
+#remaining{
+    color:grey;
+    font-size: 1em;
+}
