@@ -47,72 +47,72 @@
             <tbody>
             <tr>
                 <th scope="row">1</th>
-                <td class="text-justify">Being a Douchebag</td>
+                <td class="text-justify" id="t1">Being a Douchebag</td>
                 <td>15/05/2020</td>
                 <td>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
                     </div>
                 </td>
-                <td>
+                <td class="buttons">
                     <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Edit" onclick="window.location.href='Edit.html' ;">
                        <i class="material-icons">create</i>
                     </button>
-                    <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Delete">
+                    <button type="button" class="btn btn-warning" id="d1" data-toggle="tooltip" data-placement="top" title="Delete" onmouseover="strikethrough(1)" onmouseout="restoring(1)">
                         <i class="material-icons">delete</i>
                     </button>
                 </td>
             </tr>
             <tr>
                 <th scope="row">2</th>
-                <td class="text-justify">Being cool</td>
+                <td class="text-justify" id="t2">Being cool</td>
                 <td>14/05/2020</td>
                 <td>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
                     </div>
                 </td>
-                <td>
+                <td class="buttons">
                     <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Edit" onclick="window.location.href='Edit.html' ;">
                         <i class="material-icons">create</i>
                      </button>
-                    <button type="button" class="btn btn-warning">
+                    <button type="button" class="btn btn-warning" id="d2" onmouseover="strikethrough(2)" onmouseout="restoring(2)">
                         <i class="material-icons">delete</i>
                     </button>
                 </td>
             </tr>
             <tr>
                 <th scope="row">3</th>
-                <td class="text-justify">Creating this basic TODO Website</td>
-                <td>14/05/2020</td>
-                <td>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">90%</div>
-                    </div>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Edit" onclick="window.location.href='Edit.html' ;">
-                        <i class="material-icons">create</i>
-                     </button>
-                    <button type="button" class="btn btn-warning">
-                        <i class="material-icons">delete</i>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">4</th>
-                <td class="text-justify">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At v</td>
+                <td class="text-justify" id="t3">Creating this basic TODO Website</td>
                 <td>14/05/2020</td>
                 <td>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
                     </div>
                 </td>
-                <td>
+                <td class="buttons">
                     <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Edit" onclick="window.location.href='Edit.html' ;">
                         <i class="material-icons">create</i>
                      </button>
-                    <button type="button" class="btn btn-warning">
+                    <button type="button" class="btn btn-warning" id="d3" onmouseover="strikethrough(3)" onmouseout="restoring(3)">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td class="text-justify" id="t4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At v</td>
+                <td>14/05/2020</td>
+                <td>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
+                    </div>
+                </td>
+                <td class="buttons">
+                    <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Edit" onclick="window.location.href='Edit.html' ;">
+                        <i class="material-icons">create</i>
+                     </button>
+                    <button type="button" class="btn btn-warning" onmouseover="strikethrough(4)" onmouseout="restoring(4)">
                         <i class="material-icons">delete</i>
                     </button>
                 </td>
@@ -132,7 +132,7 @@
             <a class="impressum" href="https://github.com/ElMagicoHD">Alexander Linger</a>
         </div>
         <div class="p-2">
-            <a class="impressum" href="../HA01/Impressum.html">Impressum</a>
+            <a class="impressum" href="../HA01/impressum.html">Impressum</a>
         </div>
     </div>
 </footer>
@@ -143,5 +143,16 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    function strikethrough(x){
+        let a = 't' + x;
+        document.getElementById(a).style.textDecoration = "line-through";
+    }
+
+    function restoring(x){
+        let a = 't' + x;
+        document.getElementById(a).style.textDecoration = "none";
+    }
+</script>
 </body>
 </html>
