@@ -1,0 +1,38 @@
+ .slider{ /*overall slider design  */
+    -webkit-appearance: none; 
+    appearance: none;
+    width: inherit;
+    height: 20px;
+    background:#5bc0de; /*bootstrap bg-info color*/
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.slider::-webkit-slider-thumb{  /*for the handle/cursor for all browsers exectp mozilla based.*/ 
+    -webkit-appearance: none;
+    appearance: none; 
+    width: 18px; 
+    height: 18px;
+    border-radius: 9px;
+    background: #f8f9fa; /*bootstrap bg-light color*/
+    cursor: pointer;
+}
+.slider::-moz-range-thumb{ /*for mozilla based browsers*/
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    background: #f8f9fa;
+}
+
+.impressum{
+    color: inherit;
+}
+
+.nix{
+    resize: none;
+}
+
+#remaining{
+    color:grey;
+    font-size: 1em;
+}

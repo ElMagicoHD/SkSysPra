@@ -1,0 +1,63 @@
+{% extends "todo/base.html"%}
+{% load static %}
+
+{%block icon%}
+<link rel="icon" type="image/svg+xml" href="{% static 'todo/image/favicon.svg' %}" sizes="any">
+{% endblock icon %}
+
+{% block content %}
+    <h1 class="text-center bg-info p-2" >Your TODOs</h1>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="{% url 'overview' %}">Overview <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="{% url 'new-todo' %}">New TODO</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">What</th>
+                    <th scope="col">Due</th>
+                    <th scope="col">Progress</th>
+                    <th scope="col">Options</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for todo in todos %}
+                <tr>
+                    <th scope="row">{{ todo.id }}</th>
+                    <td class="text-justify" id="t{{todo.id}}">{{ todo.task }}</td>
+                    <td>{{ todo.due }}</td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: {{ todo.progress }};" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{ todo.progress }}</div>
+                        </div>
+                    </td>
+                    <td class="buttons">
+                        <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Edit" onclick="window.location.href='Edit.html' ;">
+                        <i class="material-icons">create</i>
+                        </button>
+                        <button type="button" class="btn btn-warning" id="d1" data-toggle="tooltip" data-placement="top" title="Delete" onmouseover="strikethrough({{todo.id}})" onmouseout="restoring({{todo.id}})">
+                            <i class="material-icons">delete</i>
+                        </button>
+                    </td>
+                </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+{% endblock content %}
