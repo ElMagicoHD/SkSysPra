@@ -46,7 +46,7 @@
                         </div>
                     </td>
                     <td class="buttons">
-                        <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Edit" onclick="window.location.href='Edit.html' ;">
+                        <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Edit" onclick="location.href='{% url 'edit-todo' %}'">
                         <i class="material-icons">create</i>
                         </button>
                         <button type="button" class="btn btn-warning" id="d1" data-toggle="tooltip" data-placement="top" title="Delete" onmouseover="strikethrough({{todo.id}})" onmouseout="restoring({{todo.id}})">

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import ToDo
 
 
 todos = [
@@ -18,6 +18,8 @@ todos = [
 ]
 
 def overview(request):
+    all_todos = ToDo.objects.all()
+
     context = {
         'todos': todos,
         'title': 'Overview',
