@@ -16,11 +16,11 @@
 	</nav>
 
 	<div class="container-fluid">
-		<form>
+		<form action="/addTodo/" method="post">{% csrf_token %}
 			<div class="form-group row">
 				<label for="title" class="col-sm-2 col-form-label">Task title</label>
 				<div class="col-sm-10">
-					<textarea  id="textfeld" class="rounded form-control nix" maxlength="160" placeholder="Watching Netflix"></textarea>
+					<textarea  id="textfeld" name="task" class="rounded form-control nix" maxlength="160" placeholder="Watching Netflix"></textarea>
 				<p id="remaining">The maximum length of a TODO is 160 characters</p>
 				</div>
 
@@ -29,21 +29,20 @@
 			<div class="form-group row">
 				<label for="dueDate" class="col-sm-2 col-form-label">Due date</label>
 				<div class="col-sm-10">
-					<input type="date" class="form-control" id="dueDate">
+					<input type="date" name="due_date" class="form-control" id="dueDate">
 				</div>
 			</div>
 			<div class="form-group row">
 				<label for="progress" class="col-sm-2 col-form-label">Progress</label>
 				<div class="col-sm-6">
-					<form name="progressForm">
 						<input class="slider" type="range" name="progressScrollerInput" id="progressInputId" value="20" min="1" max="100" oninput="processOutputId.value = progressInputId.value" >
 						<div class=" font-italic text-center">
 							<output name="processScrollerOutput" id="processOutputId">20</output>%
 						</div>
-					</form>
 				</div>
 			</div>
+			<button type="sumbit" class="btn btn-dark">Save</button>
 		</form>
-		<button type="button" class="btn btn-dark">Save</button>
+		
     </div>
 {% endblock content %}
