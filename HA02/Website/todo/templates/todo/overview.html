@@ -45,13 +45,17 @@
                             <div class="progress-bar" role="progressbar" style="width: {{ todo.progress }}%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">{{ todo.progress }} %</div>
                         </div>
                     </td>
-                    <td class="buttons">
-                        <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Edit" onclick="location.href='{% url 'edit-todo' %}'">
-                        <i class="material-icons">create</i>
-                        </button>
-                        <button type="button" class="btn btn-warning" id="d{{ todo.id }}" onclick=""  data-toggle="tooltip" data-placement="top" title="Delete" onmouseover="strikethrough({{todo.id}})" onmouseout="restoring({{todo.id}})">
-                            <i class="material-icons">delete</i>
-                        </button>
+                    <td class="buttons" class"column">
+                        <form>
+                            <button type="submit" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Edit" onclick="location.href='{% url 'edit-todo' %}'">
+                            <i class="material-icons">create</i>
+                            </button>
+                        </form>
+                        <form action="deleteTodo/{{todo.id}}/" method="post"> {% csrf_token %} <!--Django wants POST instead of DELETE SMH-->
+                            <button type="submit" class="btn btn-warning" id="d{{ todo.id }}" data-toggle="tooltip" data-placement="top" title="Delete" onmouseover="strikethrough({{todo.id}})" onmouseout="restoring({{todo.id}})">
+                                <i class="material-icons">delete</i>
+                            </button>
+                        </form>
                     </td>
                 </tr>
                     {% endfor %}

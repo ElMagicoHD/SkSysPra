@@ -38,5 +38,11 @@ def addTodo(request):
     #redirecting
     return HttpResponseRedirect('/')
 
+def deleteTodo(request, todo_id):
+    tmp = Todo.objects.get(id=todo_id)
+    tmp.delete()
+    return HttpResponseRedirect('/')
+
+
 
 
