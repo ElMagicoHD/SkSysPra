@@ -1,27 +1,13 @@
 from django.shortcuts import render
-from .models import ToDo
+from .models import Todo
 
 
-todos = [
-    {   'id': 1,
-        'task': 'Being a douchebag',
-        'due': '15/05/2020',
-        'progress': '100%'
-
-    },
-    {   'id': 2,
-        'task': 'Being cool',
-        'due': '16/05/2020',
-        'progress': '70%'
-
-    },
-]
 
 def overview(request):
-    all_todos = ToDo.objects.all()
+    all_todos = Todo.objects.all()
 
     context = {
-        'todos': todos,
+        'todos': all_todos,
         'title': 'Overview',
     }
 
@@ -29,12 +15,12 @@ def overview(request):
 
 def newTodo(request):
     context = {
-        'title': 'New ToDo',
+        'title': 'New Todo',
     }
     return render(request, 'todo/new.html', context)
 
 def edit(request):
     context = {
-        'title': 'Edit'
+        'title': 'Edit',
     } 
     return render(request, 'todo/edit.html', context)
