@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from .models import Todo
 
 
@@ -39,7 +39,10 @@ def addTodo(request):
     return HttpResponseRedirect('/')
 
 def deleteTodo(request, todo_id):
-    tmp = Todo.objects.get(id=todo_id)
+    try:
+        tmp = Todo.objects.get(id=todo_id)
+    except Todo.DoesNotExist:
+        raise Http404("ToDo does not exist!")
     tmp.delete()
     return HttpResponseRedirect('/')
 
