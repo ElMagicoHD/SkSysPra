@@ -61,6 +61,9 @@
                     {% endfor %}
                 </tbody>
             </table>
+            {% if todos.first == null %}
+                    <p class="text-secondary">No ToDos! Good Job! </p>
+            {% endif %}
         </div>
 
     </div>
