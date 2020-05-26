@@ -27,7 +27,8 @@ def addTodo(request):
 # GET method
 def edit(request, todo_id):
     tmp = Todo.objects.get(id=todo_id)
-    return render(request, 'todo/edit.html', context={'todo': tmp, 'title': 'Edit'})
+    print(tmp.due_date)
+    return render(request, 'todo/edit.html', context={'todo': tmp,'title': 'Edit'})
 
 # POST method
 def editTodo(request, todo_id):
