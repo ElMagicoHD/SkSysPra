@@ -2,30 +2,16 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, Http404
 from .models import Todo
 
-
-
 def overview(request):
     all_todos = Todo.objects.all()
 
-    context = {
-        'todos': all_todos,
-        'title': 'Overview',
-    }
+    return render(request, 'todo/overview.html', context={'todos': all_todos,'title': 'Overview',})
 
-    return render(request, 'todo/overview.html', context)
-
+# GET method
 def newTodo(request):
-    context = {
-        'title': 'New Todo',
-    }
-    return render(request, 'todo/new.html', context)
+    return render(request, 'todo/new.html', context={'title': 'New Todo'})
 
-def edit(request):
-    context = {
-        'title': 'Edit',
-    } 
-    return render(request, 'todo/edit.html', context)
-
+# POST method
 def addTodo(request):
     #getting info from httpPost
     c = request.POST['task']
@@ -36,6 +22,20 @@ def addTodo(request):
     #saving item
     temp.save()
     #redirecting
+    return HttpResponseRedirect('/')
+
+# GET method
+def edit(request, todo_id):
+    tmp = Todo.objects.get(id=todo_id)
+    return render(request, 'todo/edit.html', context={'todo': tmp, 'title': 'Edit'})
+
+# POST method
+def editTodo(request, todo_id):
+    tmp = Todo.objects.get(id=todo_id)
+    tmp.task = request.POST.get('task')
+    tmp.due_date = request.POST.get('due_date')
+    tmp.progress = request.POST.get('progressScrollerInput')
+    tmp.save()
     return HttpResponseRedirect('/')
 
 def deleteTodo(request, todo_id):
