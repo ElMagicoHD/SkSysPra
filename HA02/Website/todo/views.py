@@ -38,6 +38,7 @@ def editTodo(request, todo_id):
     tmp.save()
     return HttpResponseRedirect('/')
 
+# POST method
 def deleteTodo(request, todo_id):
     try:
         tmp = Todo.objects.get(id=todo_id)
@@ -46,6 +47,8 @@ def deleteTodo(request, todo_id):
     tmp.delete()
     return HttpResponseRedirect('/')
 
-
+# GET method
+def impressum(request):
+    return render(request, 'todo/impressum.html')
 
 
