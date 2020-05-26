@@ -1,0 +1,53 @@
+{% extends "todo/base.html"%}
+{% load static %}
+
+{%block icon%}
+<link rel="icon" type="image/svg+xml" href="{% static 'todo/image/editfavicon.svg' %}" sizes="any">
+{% endblock icon %}
+
+{% block content %}
+    <h1 class="text-center bg-info p-2" >Edit your TODOs</h1>
+
+
+    <nav class="navbar navbar-expand navbar-light bg-light">
+		<a href="{% url 'overview' %}" class="pt-3 navbar-brand"></a> <!--so that the arrow is also clickable and at the same height as the text-->
+			<i class="material-icons">arrow_back</i>
+		<a href="{% url 'overview' %}" class="navbar-brand">Back to the main site</a>
+	</nav>
+
+    <div class="container-fluid">
+		<form action="/editTodo/{{todo.id}}/" method="post">{% csrf_token %}
+			<div class="form-group row">
+				<label for="title" class="col-sm-2 col-form-label">Task title</label>
+				<div class="col-sm-10">
+					<textarea  id="textfeld" name="task" class="rounded form-control nix" maxlength="160" required>{{ todo.task }}</textarea>
+				<p id="remaining">The maximum length of a TODO is 160 characters</p>
+				</div>
+
+
+			</div>
+			<div class="form-group row">
+				<label for="dueDate" class="col-sm-2 col-form-label">Due date</label>
+				<div class="col-sm-10">
+					<input type="date" name="due_date" class="form-control" id="dueDate" value="2020-06-05" required>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label for="progress" class="col-sm-2 col-form-label">Progress</label>
+				<div class="col-sm-6">
+						<input class="slider" type="range" name="progressScrollerInput" id="progressInputId" value={{todo.progress}} min="1" max="100" oninput="processOutputId.value = progressInputId.value" required>
+						<div class=" font-italic text-center">
+							<output name="processScrollerOutput" id="processOutputId">{{ todo.progress }}</output>%
+						</div>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-dark">Save</button>
+		</form>
+    </div>
+
+
+
+
+
+
+{% endblock content %}
