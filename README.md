@@ -1,19 +1,23 @@
-# Programmierpraktikum: Skalierbare Systeme 
+# Programmierpraktikum: Skalierbare Systeme
 
-Static website developed with Bootstrap Framework, which simulated simple TODO-Tracker. It consist of four linked HTML sites: Overview.html, NewToDo.html, Edit.html and Impressum.html.
+Dynamic website developed with Bootstrap and Django frameworks which simulate simple ToDo-Tracker. Static ToDo, which was created before was used as skeleton for dynamic site. It has three functionalities: create new ToDo task, edit existing one and delete existing ToDo task. The data are stored persistently in a SQLite database.
 
-## Overview.html
+## Installation guide for HA02:
 
-An overview page with several hard coded example TODOs.
+Be sure your computer has python 3.6 or higher installed. Open your terminal in the "HA02/Website" folder.
 
-## NewToDo.html
+## If you're on windows:
+doubleclick on the **_startserver.cmd_** file!
+Then open the URL ```localhost:8000``` in your preferred browser!
 
-A page to create a new TODO (static).
+## If you're on a UNIX based system:
 
-## Edit.html
+type:
+```
+python ./HA02/Website/manage.py makemigrations
 
-A page to demonstrate how a TODO can be edited.
+python ./HA02/Website/manage.py migrate
 
-## Impressum.html
-
-Impressum page, that consists all contact information and authors name.
+python ./HA02/Website/manage.py runserver
+```
+Then open the URL ```localhost:8000``` in your preferred browser!
