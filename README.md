@@ -8,6 +8,7 @@ Be sure your computer has python 3.6 or higher installed. Open your terminal in 
 
 ## If you're on windows:
 doubleclick on the **_startserver.cmd_** file!
+Then open the URL ```localhost:8000``` in your preferred browser!
 
 ## If you're on a UNIX based system:
 
